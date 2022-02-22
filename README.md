@@ -25,7 +25,7 @@ export default App;
 ```
 
 ## Add Semantic UI for Stylings
-In ==public/index.html== add the following in the head section:
+In == public/index.html == add the following in the head section:
 ```
 <link rel="stylesheet" href="assets/semantic.min.css">
 <script src="assets/semantic.min.js"></script>
