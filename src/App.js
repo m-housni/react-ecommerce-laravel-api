@@ -8,13 +8,13 @@ import './App.css'
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Router>
         <Header />
         <Routes>
           <Route path="/" element={<ProductListing />} />
           <Route path="/about" element={<About />} />
-          <Route path="/product/productId" element={<ProductDetails />} />
+          <Route path="/product/:productId" element={<ProductDetails />} />
         </Routes>
       </Router>
     </div>
