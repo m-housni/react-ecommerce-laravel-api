@@ -7,7 +7,7 @@ import Product from './Product'
 
 const ProductListing = () => {
     
-    const products = useSelector(state => state.allProducts.products)
+    const products = useSelector(state => state.products.products)
     const dispatch = useDispatch()
 
     // fech products from FakeStoreAPI

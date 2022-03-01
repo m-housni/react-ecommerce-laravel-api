@@ -7,7 +7,7 @@ const Product = ({product}) => {
     let cw = $('img').width()
 
     return (
-        <Link to={`/product/${product.id}`} className="column">
+        <Link to={`/product/${product.id}/${product.title}`} className="column">
         <div className="column">
             <div className="ui segment">
                 <img src={product.image} alt={product.title} style={{width:"100%"}} />
