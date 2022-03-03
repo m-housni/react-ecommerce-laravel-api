@@ -8,15 +8,13 @@ import './App.css'
 
 function App() {
   return (
-    <div>
-      <Router>
+    <div className="ui container">
         <Header />
         <Routes>
           <Route path="/" element={<ProductListing />} />
           <Route path="/about" element={<About />} />
           <Route path="/product/:productId/:productName" element={<ProductDetails />} />
         </Routes>
-      </Router>
     </div>
   );
 }

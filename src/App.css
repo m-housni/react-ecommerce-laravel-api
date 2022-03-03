@@ -1,6 +1,30 @@
 .bg-brown {
-  background-color: brown !important;
-  color: white !important;; 
+  background-color: rgba(112, 112, 109, 0.5) !important;
+  color: #fff !important;; 
+}
+
+.hideInfo {
+  display: none !important;
+}
+
+.showInfo {
+  display: block !important;
 }
 
 
+.d-none {
+  display: none !important;
+}
+
+.centerDiv  {
+  width:800px;
+  border-radius: 5px;
+  background: transparent;
+  padding:10px;
+  height:50px;
+  position:absolute;
+  margin-top:-25px;
+  margin-left:-400px;
+  top:50%;
+  left:50%;
+}

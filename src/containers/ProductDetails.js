@@ -1,20 +1,36 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from "react-redux"
 import { selectedProduct, removeSelectedProduct } from '../redux/actions/productActions'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
+import ProductListing from './ProductListing'
+import SimilarProduct from './SimilarProduct'
+import $ from 'jquery'
+
+
 
 const ProductDetails = () => {
 
-    const product = useSelector(state => state.selectedProduct.product)
-    const { productId } = useParams()
+    let [SimilarProducts, setSimilarProducts] = useState([])
+    let product = useSelector(state => state.selectedProduct.product)
+    let { productId } = useParams()
+    let [pid, setPid] = useState(productId)
+
     const dispatch = useDispatch()
 
     // fech product from FakeStoreAPI
     const fetchProduct = async () => {
-        const product = await axios.get(`https://fakestoreapi.com/products/${productId}`).catch(err => console.log(err))
-        console.log(product.data)
-        dispatch(selectedProduct(product.data))
+        const response = await axios.get(`https://fakestoreapi.com/products/${pid}`).catch(err => console.log(err))
+        if(response){
+            dispatch(selectedProduct(response.data))
+            fetchSimilarProducts(response.data.category)
+        }
+    }
+    const fetchSimilarProducts = async (category) => {
+        const response = await axios.get(`https://fakestoreapi.com/products/category/${category}`).catch(err => console.log(err))
+        if(response) {
+            setSimilarProducts(response.data)
+        }
     }
    
     useEffect(() => {
@@ -24,22 +40,40 @@ const ProductDetails = () => {
         return () => {
             dispatch(removeSelectedProduct())
         }
-    },[])
+    },[pid])
 
-    
     return (
         <div className="ui stackable two column grid container">
             {Object.keys(product).length === 0 ? 
-                <div>Loading...</div> :
+                <div className="centerDiv">
+                    <div className="ui active massive text centered inline loader"></div>
+                </div> :
                 <div className="row">
                     <div className="column">
-                        <img src={product.image} />
+                        <div class="ui raised segment">
+                            <a class="ui red ribbon label">Overview</a>
+                            <span>Account Details</span>
+                            <img src={product.image} width="100%"/>
+                        </div>
                     </div>
                     <div className="column">
                         <h1>{product.title}</h1>
                         <p>{product.description}</p>
-                        <p>${product.price}</p>
+                        <p><span className="ui massive teal tag label">${product.price}</span></p>
                         <p>{product.category}</p>
+                    </div>
+                    <h1>Similar Products</h1>
+                    <div className="ui doubling four column grid container">
+                        {SimilarProducts.filter(p => p.id != pid).map(product => {
+                            return ( 
+                                <div className="column" key={product.id} onClick={() => setPid(product.id)}>
+                                    <SimilarProduct 
+                                        product={product}
+                                    /> 
+                                </div>
+
+                            )
+                        })}
                     </div>
                 </div>
         }
