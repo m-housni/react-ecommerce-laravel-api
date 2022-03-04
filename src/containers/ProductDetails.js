@@ -42,6 +42,8 @@ const ProductDetails = () => {
         }
     },[pid])
 
+    
+
     return (
         <div className="ui stackable two column grid container">
             {Object.keys(product).length === 0 ? 
@@ -51,9 +53,6 @@ const ProductDetails = () => {
                 <div className="row">
                     <div className="column">
                         <div className="ui raised segment">
-                            {/* <a className={`ui yellow ribbon label`}>NEW<br/>Cooooool</a>
-                            <a className={`ui yellow ribbon label`}>NEW<br/>Cooooool</a> 
-                            <span>Account Details</span> */}
                             <a className="ui left corner label"><i className="cart icon"></i></a>
                             <a className="ui right corner label"><i className="heart icon"></i></a>
                             <img src={product.image} width="100%"/>
