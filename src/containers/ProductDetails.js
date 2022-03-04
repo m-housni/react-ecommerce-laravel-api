@@ -56,8 +56,8 @@ const ProductDetails = () => {
                             <span>Account Details</span> */}
                             <a className="ui left corner label"><i className="cart icon"></i></a>
                             <a className="ui right corner label"><i className="heart icon"></i></a>
-                            
                             <img src={product.image} width="100%"/>
+                            <div className="ui bottom right attached label">Admin View</div>
                         </div>
                     </div>
                     <div className="column">
