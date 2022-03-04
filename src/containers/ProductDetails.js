@@ -50,16 +50,20 @@ const ProductDetails = () => {
                 </div> :
                 <div className="row">
                     <div className="column">
-                        <div class="ui raised segment">
-                            <a class="ui red ribbon label">Overview</a>
-                            <span>Account Details</span>
+                        <div className="ui raised segment">
+                            {/* <a className={`ui yellow ribbon label`}>NEW<br/>Cooooool</a>
+                            <a className={`ui yellow ribbon label`}>NEW<br/>Cooooool</a> 
+                            <span>Account Details</span> */}
+                            <a className="ui left corner label"><i className="cart icon"></i></a>
+                            <a className="ui right corner label"><i className="heart icon"></i></a>
+                            
                             <img src={product.image} width="100%"/>
                         </div>
                     </div>
                     <div className="column">
                         <h1>{product.title}</h1>
                         <p>{product.description}</p>
-                        <p><span className="ui massive teal tag label">${product.price}</span></p>
+                        <p><span className="ui large teal tag label">${product.price}</span></p>
                         <p>{product.category}</p>
                     </div>
                     <h1>Similar Products</h1>
