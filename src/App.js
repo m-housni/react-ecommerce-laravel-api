@@ -1,5 +1,6 @@
 import React from "react"
 import Header from './containers/Header'
+import HeaderFixed from "./containers/HeaderFixed"
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import ProductListing from './containers/ProductListing'
 import ProductDetails from './containers/ProductDetails'
@@ -9,7 +10,8 @@ import './App.css'
 function App() {
   return (
     <div className="ui container">
-        <Header />
+        <HeaderFixed />
+        <div className="mt" />
         <Routes>
           <Route path="/" element={<ProductListing />} />
           <Route path="/about" element={<About />} />
