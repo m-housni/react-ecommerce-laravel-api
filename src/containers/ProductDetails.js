@@ -56,7 +56,9 @@ const ProductDetails = () => {
                         <div className="ui raised segment">
                             <a className="ui left corner label"><i className="cart icon"></i></a>
                             <a className="ui right corner label"><i className="heart icon"></i></a>
-                            <img src={product.image} width="100%"/>
+                            <div class="img-hover-zoom">
+                                <img src={product.image} alt={product.title} style={{width:"100%"}} />
+                            </div>
                             <div className="ui bottom right attached label">Admin View</div>
                         </div>
                     </div>

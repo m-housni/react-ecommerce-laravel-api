@@ -8,7 +8,9 @@ const Product = ({product}) => {
         <Link to={`/product/${product.id}/${product.title.replace(/\s/g, "_").replace(/\//g, '')}`} className="column">
         
             <div className="ui segment">
-                <img src={product.image} alt={product.title} style={{width:"100%"}} />
+                <div class="img-hover-zoom">
+                    <img src={product.image} alt={product.title} style={{width:"100%"}} />
+                </div>
                 {/* <div className="ui top attached label bg-brown">{product.category}</div> */}
                 <div className="ui bottom attached label big text center aligned fluid-container">${product.price}</div>
             </div>

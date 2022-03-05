@@ -1,7 +1,7 @@
 const About = () => {
     return (
         <div className="ui left aligned container">
-            lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+            <p>lorem uihcuie ionioce opokpowq yyxgyw pokcpoke pojcpowpek buybxq oijcpoej jpojcopew</p>
         </div>
     )
 }
