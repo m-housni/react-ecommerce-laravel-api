@@ -36,6 +36,7 @@ const ProductDetails = () => {
     useEffect(() => {
         if(productId && productId!==""){
             fetchProduct()
+            $(window).scrollTop(0)
         }
         return () => {
             dispatch(removeSelectedProduct())
