@@ -33,9 +33,10 @@ const ProductListing = () => {
     return (
         <div className="row">
             {Object.keys(products).length === 0 ?
-            <div className="centerDiv">
-                <div className="ui active massive text centered inline loader"></div>
-            </div> :
+            <div className='center-on-screen'>
+                <div class="ui massive active centered inline loader"></div>
+            </div>
+             :
             <div className="ui doubling four column grid">
                 {products.map(product => {
                     return ( 

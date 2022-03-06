@@ -47,8 +47,8 @@ const ProductDetails = () => {
     return (
         <div className="ui stackable two column grid container">
             {Object.keys(product).length === 0 ? 
-                <div className="centerDiv">
-                    <div className="ui active massive text centered inline loader"></div>
+                <div className='center-on-screen'>
+                    <div class="ui massive active centered inline loader"></div>
                 </div> :
                 <div className="row">
                     <div className="column">

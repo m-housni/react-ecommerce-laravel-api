@@ -6,8 +6,10 @@ import ProductListing from './containers/ProductListing'
 import ProductDetails from './containers/ProductDetails'
 import About from './containers/About'
 import './App.css'
+import $ from 'jquery'
 
 function App() {
+
   return (
     <div className="ui container">
         <HeaderFixed />
