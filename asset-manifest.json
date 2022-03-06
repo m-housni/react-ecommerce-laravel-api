@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react-redux-fake-shop/static/css/main.e681b4b1.css",
-    "main.js": "/react-redux-fake-shop/static/js/main.2ba471f5.js",
+    "main.js": "/react-redux-fake-shop/static/js/main.ec04cb8d.js",
     "index.html": "/react-redux-fake-shop/index.html",
     "main.e681b4b1.css.map": "/react-redux-fake-shop/static/css/main.e681b4b1.css.map",
-    "main.2ba471f5.js.map": "/react-redux-fake-shop/static/js/main.2ba471f5.js.map"
+    "main.ec04cb8d.js.map": "/react-redux-fake-shop/static/js/main.ec04cb8d.js.map"
   },
   "entrypoints": [
     "static/css/main.e681b4b1.css",
-    "static/js/main.2ba471f5.js"
+    "static/js/main.ec04cb8d.js"
   ]
 }
