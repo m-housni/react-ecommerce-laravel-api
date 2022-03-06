@@ -4,10 +4,12 @@ import { setProducts } from "../redux/actions/productActions"
 import axios from 'axios'
 import Product from './Product'
 import Categories from './Categories'
+import $ from 'jquery'
 
 const ProductListing = () => {
     
     const products = useSelector(state => state.products.products)
+    let product = useSelector(state => state.selectedProduct.product)
     const dispatch = useDispatch()
 
     // fech products from FakeStoreAPI
@@ -15,6 +17,7 @@ const ProductListing = () => {
         const response = await axios.get('https://fakestoreapi.com/products').catch(err => console.log(err))
         if(response) {
             dispatch(setProducts(response.data))
+            $(window).scrollTop(0)
         }
     }
 
@@ -22,6 +25,9 @@ const ProductListing = () => {
 
     useEffect(() => {
         fetchProducts()
+        return () => {
+            dispatch(setProducts([]))
+        }
     },[])
 
     return (

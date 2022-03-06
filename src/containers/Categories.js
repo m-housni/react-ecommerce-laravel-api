@@ -19,15 +19,15 @@ const Categories = () => {
 
 
     return (
-        <div>
+        <>
             {categories.map((category, idx) => {
                 return ( 
-                    <div style={{fontSize:"1.5rem", paddingBottom:15}} key={idx}>
+                    <a className='item' href="#" key={idx}>
                         {category}
-                    </div> 
+                    </a> 
                 )
             })}
-        </div>
+        </>
     )
 }
 
