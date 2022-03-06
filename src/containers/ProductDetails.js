@@ -3,9 +3,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { selectedProduct, removeSelectedProduct } from '../redux/actions/productActions'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
-import ProductListing from './ProductListing'
 import SimilarProduct from './SimilarProduct'
-import $ from 'jquery'
 
 
 
@@ -36,7 +34,6 @@ const ProductDetails = () => {
     useEffect(() => {
         if(productId && productId!==""){
             fetchProduct()
-            $(window).scrollTop(0)
         }
         return () => {
             dispatch(removeSelectedProduct())
@@ -56,7 +53,7 @@ const ProductDetails = () => {
                         <div className="ui raised segment">
                             <a className="ui left corner label"><i className="cart icon"></i></a>
                             <a className="ui right corner label"><i className="heart icon"></i></a>
-                            <div class="img-hover-zoom">
+                            <div className="img-hover-zoom">
                                 <img src={product.image} alt={product.title} style={{width:"100%"}} />
                             </div>
                             <div className="ui bottom right attached label">Admin View</div>
