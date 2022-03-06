@@ -15,8 +15,8 @@ const Product = ({product}) => {
                     <img src={product.image} alt={product.title} style={{width:"100%"}} />
                 </div>
                 <div className="ui bottom attached label big text center aligned fluid-container">
+                    <div style={{fontSize:".7rem"}}>{product.description.substring(0,24)} ...</div>
                     ${product.price}
-                    <div style={{fontSize:".8rem"}}>{product.category}</div>
                 </div>
                 
             </div>

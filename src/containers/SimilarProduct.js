@@ -13,10 +13,11 @@ const Product = ({product}) => {
                 <div className="img-hover-zoom">
                     <img src={product.image} alt={product.title} style={{width:"100%"}} />
                 </div>
-                {/* <div className="ui top attached label bg-brown">{product.category}</div> */}
-                <div className="ui bottom attached label big text center aligned fluid-container">${product.price}</div>
+                <div className="ui bottom attached label big text center aligned fluid-container">
+                    <div style={{fontSize:".7rem"}}>{product.description.substring(0,24)} ...</div>
+                    ${product.price}
+                </div>
             </div>
-
         </Link>
     )
 
