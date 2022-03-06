@@ -4,6 +4,7 @@ import { selectedProduct, removeSelectedProduct } from '../redux/actions/product
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import SimilarProduct from './SimilarProduct'
+import $ from 'jquery'
 
 
 
@@ -34,6 +35,7 @@ const ProductDetails = () => {
     useEffect(() => {
         if(productId && productId!==""){
             fetchProduct()
+            $(window).scrollTop(0)
         }
         return () => {
             dispatch(removeSelectedProduct())
