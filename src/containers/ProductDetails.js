@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import SimilarProduct from './SimilarProduct'
 import $ from 'jquery'
+import config from '../config.json'
 
 
 
@@ -48,7 +49,7 @@ const ProductDetails = () => {
         <div className="ui stackable two column grid container">
             {Object.keys(product).length === 0 ? 
                 <div className='center-on-screen'>
-                    <div class="ui massive active centered inline loader"></div>
+                    <div className="ui massive active centered inline loader"></div>
                 </div> :
                 <div className="row">
                     <div className="column">
@@ -64,7 +65,7 @@ const ProductDetails = () => {
                     <div className="column">
                         <h1>{product.title}</h1>
                         <p>{product.description}</p>
-                        <p><span className="ui large teal tag label">${product.price}</span></p>
+                        <p><span className={`ui ${config.theme.PRIMARY_COLOR} inverted large teal tag label ${config.theme.PRIMARY_COLOR} inverted`}>${product.price}</span></p>
                         <p>{product.category}</p>
                     </div>
                     <h1>Similar Products</h1>

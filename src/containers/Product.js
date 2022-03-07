@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Link } from "react-router-dom";
-import $ from 'jquery'
 
 
 const Product = ({product}) => {
@@ -9,7 +8,7 @@ const Product = ({product}) => {
         <Link to={`/product/${product.id}/${product.title.replace(/\s/g, "_").replace(/\//g, '')}`} className="column">
         <div className="column">
             <div className="ui segment">
-                <a className="ui left corner label"><i className="cart icon"></i></a>
+                <a className="ui left corner label" onClick={() => alert()}><i className="cart icon"></i></a>
                 <a className="ui right corner label"><i className="heart icon"></i></a>
                 <div className="img-hover-zoom">
                     <img src={product.image} alt={product.title} style={{width:"100%"}} />

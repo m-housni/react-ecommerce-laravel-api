@@ -13,18 +13,3 @@ export const productsReducer = (state = initialState, action) => {
             return state
     }
 }
-
-/* we can distructurize the action object and pass the action.type as a variable
-export const productReducer = (state = initialState, {type, payload}) => {
-    switch(type) {
-        case SET_PRODUCTS:
-            return
-        case SELECTED_PRODUCT:
-            return
-        case REMOVE_SELECTED_PRODUCT:
-            return
-        default:
-            return state
-    }
-}
-*/

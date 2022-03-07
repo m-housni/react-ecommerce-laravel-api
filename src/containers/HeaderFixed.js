@@ -9,12 +9,19 @@ const HeaderFixed = () => {
                 <Link to="/" className="header item"><span className="logo-text">{config.APP_NAME}</span></Link>
                 <Link to="/" className="item">Shop</Link>
                 <div className="ui simple dropdown item">
-                    Categories <i className="dropdown icon"></i>
+                    <i className="filter icon"></i>
                     <div className="menu">
                         <Categories />
                     </div>
                 </div>
-                <Link to="/about" className="item">About</Link>
+                <Link to="/cart" className="item">
+                    <i className="cart icon"></i>
+                    <sup>9</sup>
+                </Link>
+                <Link to="/wishlist" className="item">
+                    <i className="heart icon"></i>
+                    <sup>9</sup>
+                </Link>
             </div>
         </div>
     )
