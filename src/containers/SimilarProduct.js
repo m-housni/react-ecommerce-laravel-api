@@ -8,8 +8,8 @@ const Product = ({product}) => {
         <Link to={`/product/${product.id}/${product.title.replace(/\s/g, "_").replace(/\//g, '')}`} className="column">
         
             <div className="ui segment">
-                <a className="ui left corner label"><i className="cart icon"></i></a>
-                <a className="ui right corner label"><i className="heart icon"></i></a>
+                <span className="ui left corner label"><i className="cart icon"></i></span>
+                <span className="ui right corner label"><i className="heart icon"></i></span>
                 <div className="img-hover-zoom">
                     <img src={product.image} alt={product.title} style={{width:"100%"}} />
                 </div>

@@ -1,8 +1,12 @@
 import { Link } from 'react-router-dom'
 import config from '../config.json'
 import Categories from './Categories'
+ import { useSelector, useDispatch } from "react-redux"
 
 const HeaderFixed = () => {
+
+    const count = useSelector(state => state.cart.products.length)
+
     return (
         <div className={`ui fixed ${config.theme.PRIMARY_COLOR} inverted menu`}>
             <div className="ui container">
@@ -16,11 +20,11 @@ const HeaderFixed = () => {
                 </div>
                 <Link to="/cart" className="item">
                     <i className="cart icon"></i>
-                    <sup>9</sup>
+                    <sup>{count}</sup>
                 </Link>
                 <Link to="/wishlist" className="item">
                     <i className="heart icon"></i>
-                    <sup>9</sup>
+                    <sup>11</sup>
                 </Link>
             </div>
         </div>
