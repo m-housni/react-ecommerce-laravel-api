@@ -3,8 +3,9 @@ import { useSelector, useDispatch } from "react-redux"
 import { setProducts } from "../redux/actions/productActions"
 import axios from 'axios'
 import Product from './Product'
-import Categories from './Categories'
+import toast, { Toaster } from 'react-hot-toast';
 import $ from 'jquery'
+
 
 const ProductListing = () => {
     
@@ -14,9 +15,11 @@ const ProductListing = () => {
 
     // fech products from FakeStoreAPI
     const fetchProducts = async () => {
+        toast.error("Wait for the sauce!")
         const response = await axios.get('https://fakestoreapi.com/products').catch(err => console.log(err))
         if(response) {
             dispatch(setProducts(response.data))
+            toast.success("Products loaded successfully!")
             $(window).scrollTop(0)
         }
     }
@@ -37,7 +40,7 @@ const ProductListing = () => {
                 <div className="ui massive active centered inline loader"></div>
             </div>
              :
-            <div className="ui doubling four column grid">
+            <div className="ui doubling four column grid"> 
                 {products.map(product => {
                     return ( 
                         <Product 

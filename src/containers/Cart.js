@@ -31,6 +31,12 @@ const Cart = () => {
                     )
                 })
             }
+            <div className="ui four column grid computer only">
+                <div className="column"></div>  
+                <div className="column"></div>    
+                <div className="column">Total</div>    
+                <div className="column">${cart.total}</div>    
+            </div>
            {
                 cart.products.map(product => {
                     return (
@@ -53,6 +59,11 @@ const Cart = () => {
                 })
 
             }
+            <div className="ui three column grid mobile tabled only"> 
+                <div className="column"></div>    
+                <div className="column">Total</div>    
+                <div className="column">${cart.total}</div>    
+            </div>
         </div>
     )
 }

@@ -8,7 +8,8 @@ import About from './containers/About'
 import Cart from './containers/Cart'
 import Wishlist from './containers/Wishlist'
 import './App.css'
-import $ from 'jquery'
+import toast, { Toaster } from 'react-hot-toast';
+
 
 function App() {
 
@@ -23,6 +24,10 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/wishlist" element={<Wishlist />} />
         </Routes>
+        <Toaster 
+              position="top-center"
+              reverseOrder={false}
+          />
     </div>
   );
 }
