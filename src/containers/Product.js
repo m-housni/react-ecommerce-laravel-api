@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux"
+import { useDispatch } from "react-redux"
 import { addToCart } from '../redux/actions/productActions'
+import toast from 'react-hot-toast';
 
 
 const Product = ({product}) => {
@@ -9,6 +10,7 @@ const Product = ({product}) => {
     const dispatch = useDispatch()
 
     const handleAddToCart = (product) => {
+        toast.success("Added to cart")
         dispatch(addToCart(product))
     }
 

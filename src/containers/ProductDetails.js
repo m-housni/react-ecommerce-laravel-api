@@ -6,6 +6,7 @@ import axios from 'axios'
 import SimilarProduct from './SimilarProduct'
 import $ from 'jquery'
 import config from '../config.json'
+import Product from './Product'
 
 
 
@@ -52,16 +53,9 @@ const ProductDetails = () => {
                     <div className="ui massive active centered inline loader"></div>
                 </div> :
                 <div className="row">
-                    <div className="column">
-                        <div className="ui raised segment">
-                            <a className="ui left corner label"><i className="cart icon"></i></a>
-                            <a className="ui right corner label"><i className="heart icon"></i></a>
-                            <div className="img-hover-zoom">
-                                <img src={product.image} alt={product.title} style={{width:"100%"}} />
-                            </div>
-                            <div className="ui bottom right attached label">Admin View</div>
-                        </div>
-                    </div>
+                    <Product 
+                        product={product}
+                    />
                     <div className="column">
                         <h1>{product.title}</h1>
                         <p>{product.description}</p>
@@ -73,7 +67,7 @@ const ProductDetails = () => {
                         {SimilarProducts.filter(p => p.id != pid).map(product => {
                             return ( 
                                 <div className="column" key={product.id} onClick={() => setPid(product.id)}>
-                                    <SimilarProduct 
+                                    <Product 
                                         product={product}
                                     /> 
                                 </div>

@@ -18,16 +18,16 @@
 }
 
 /* [1] The container */
-.img-hover-zoom {
+.img-hover-zoom, .corner.label {
   overflow: hidden; /* [1.2] Hide the overflowing of child elements */
 }
 
 /* [2] Transition property for smooth transformation of images */
-.img-hover-zoom img {
+.img-hover-zoom img, .corner.label i {
   transition: transform .5s ease;
 }
 
 /* [3] Finally, transforming the image when container gets hovered */
-.img-hover-zoom:hover img {
+.img-hover-zoom:hover img, .corner.label:hover i {
   transform: scale(1.5);
 }

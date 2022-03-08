@@ -59,7 +59,7 @@ const Cart = () => {
                 })
 
             }
-            <div className="ui three column grid mobile tabled only"> 
+            <div className="ui three column grid mobile tablet only"> 
                 <div className="column"></div>    
                 <div className="column">Total</div>    
                 <div className="column">${cart.total}</div>    

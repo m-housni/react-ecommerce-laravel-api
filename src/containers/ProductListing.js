@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { setProducts } from "../redux/actions/productActions"
 import axios from 'axios'
 import Product from './Product'
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 import $ from 'jquery'
 
 
@@ -15,13 +15,19 @@ const ProductListing = () => {
 
     // fech products from FakeStoreAPI
     const fetchProducts = async () => {
-        toast.error("Wait for the sauce!")
-        const response = await axios.get('https://fakestoreapi.com/products').catch(err => console.log(err))
-        if(response) {
-            dispatch(setProducts(response.data))
-            toast.success("Products loaded successfully!")
-            $(window).scrollTop(0)
-        }
+        const tst = toast.loading('Loading...',{
+            position: 'bottom-left',
+        })
+        const response = await axios.get('https://fakestoreapi.com/products')
+                                    .catch(err => {
+                                        toast.error("Something went wrong, please try again later")
+                                        console.log(err)
+                                    }).then(response => {
+                                        dispatch(setProducts(response.data))
+                                        $(window).scrollTop(0)
+                                        toast.success("New Products and Offers ... ",{icon: "📢"})
+                                        toast.dismiss(tst)
+                                    })
     }
 
    
