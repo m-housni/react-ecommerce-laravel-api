@@ -34,7 +34,7 @@ const Cart = () => {
            {
                 cart.products.map(product => {
                     return (
-                        <div className="ui three column grid mobile only" key={product.id}>
+                        <div className="ui three column grid mobile tablet only" key={product.id}>
                             <div className="column ">
                                 <img src={product.image} alt={product.title} style={{width:"32px"}} />
                                 <br />
@@ -51,7 +51,7 @@ const Cart = () => {
                         </div>
                     )
                 })
-                
+
             }
         </div>
     )
