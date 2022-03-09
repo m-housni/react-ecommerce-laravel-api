@@ -33,8 +33,8 @@ export const cartReducer = (state = initialState, action) => {
         case ActionTypes.DECREMENT_QTY:
             if(!productExists) {
                 return state
-            } else {
-                productExists.qty = productExists.qty > 1 ? --productExists.qty : 1
+            } else if(productExists.qty>1) {
+                productExists.qty -= 1
                 return {
                     ...state, 
                     products: [...productsCopyLeft, {...productExists}, ...productsCopyRight],
