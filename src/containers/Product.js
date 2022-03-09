@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import React, { useState } from 'react'
+import { BrowserRouter as Router, Link } from "react-router-dom"
 import { useDispatch } from "react-redux"
 import { addToCart } from '../redux/actions/productActions'
-import toast from 'react-hot-toast';
+import toast from 'react-hot-toast'
 
 
 const Product = ({product}) => {

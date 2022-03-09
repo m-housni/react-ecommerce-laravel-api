@@ -23,11 +23,11 @@
 }
 
 /* [2] Transition property for smooth transformation of images */
-.img-hover-zoom img, .corner.label i {
+.img-hover-zoom img, i {
   transition: transform .5s ease;
 }
 
 /* [3] Finally, transforming the image when container gets hovered */
-.img-hover-zoom:hover img, .corner.label:hover i {
+.img-hover-zoom:hover img, i:hover {
   transform: scale(1.5);
 }

@@ -27,3 +27,17 @@ export const addToCart = (product) => {
         payload: product,
     }
 }
+
+export const decrementQty = (product) => {
+    return {
+        type: ActionTypes.DECREMENT_QTY,
+        payload: product,
+    }
+}
+
+export const removeFromCart = (product) => {
+    return {
+        type: ActionTypes.REMOVE_FROM_CART,
+        payload: product,
+    }
+}
