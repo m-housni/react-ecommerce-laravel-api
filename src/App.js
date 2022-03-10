@@ -7,13 +7,16 @@ import ProductDetails from './containers/ProductDetails'
 import About from './containers/About'
 import Cart from './containers/Cart'
 import Wishlist from './containers/Wishlist'
+import SideIcons from "./containers/SideIcons"
 import './App.css'
 import toast, { Toaster } from 'react-hot-toast';
+import $ from 'jquery'
 
 
 function App() {
 
   return (
+    <>
     <div className="ui container">
         <HeaderFixed />
         <div className="mt" />
@@ -25,10 +28,11 @@ function App() {
           <Route path="/wishlist" element={<Wishlist />} />
         </Routes>
         <Toaster 
-              position="top-center"
-              reverseOrder={false}
-          />
+            position="top-left"
+            reverseOrder={false}
+        />
     </div>
+    </>
   );
 }
 
