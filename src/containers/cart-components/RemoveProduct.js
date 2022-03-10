@@ -15,7 +15,7 @@ export default function RemoveFromCart({product}) {
 
 
     return (
-        <span onClick={() => handleRemoveFromCart(product)} className={`ui left corner label ${config.theme.PRIMARY_COLOR}`} style={{cursor:"pointer"}}>
+        <span onClick={() => handleRemoveFromCart(product)} className={`ui left corner label`} style={{cursor:"pointer"}}>
             <i className="trash icon"></i>
         </span>
     )
