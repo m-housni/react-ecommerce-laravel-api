@@ -42,6 +42,12 @@ export const cartReducer = (state = initialState, action) => {
                 }
             }
             return state
+        case ActionTypes.REMOVE_FROM_CART:
+            return {
+                ...state, 
+                products: [...productsCopyLeft, ...productsCopyRight],
+                total: state.total - action.payload.price*action.payload.qty
+            }
         default:
             return state
     }

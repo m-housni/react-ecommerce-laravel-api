@@ -4,18 +4,20 @@ import { removeFromCart } from "../../redux/actions/productActions"
 import toast from 'react-hot-toast'
 import config from '../../config.json'
 
-export default function RemoveProduct({product}) {
+export default function RemoveFromCart({product}) {
 
     const dispatch = useDispatch()
 
     const handleRemoveFromCart = (product) => {
-        toast.success("Cart updated successfully")
+        toast.success("Product removed from cart!")
         dispatch(removeFromCart(product))
     }
 
 
     return (
-        <span className={`ui left corner label ${config.theme.PRIMARY_COLOR}`} style={{cursor:"pointer"}}><i className="trash icon"></i></span>
+        <span onClick={() => handleRemoveFromCart(product)} className={`ui left corner label ${config.theme.PRIMARY_COLOR}`} style={{cursor:"pointer"}}>
+            <i className="trash icon"></i>
+        </span>
     )
 
 }
