@@ -1,4 +1,3 @@
-import React, {useState} from 'react'
 import { useSelector, useDispatch } from "react-redux"
 import SelectQuantity from './cart-components/SelectQuantity'
 import CheckoutButton from './cart-components/CheckoutButton'
@@ -6,6 +5,7 @@ import CheckoutButtonMobile from './cart-components/CheckoutButtonMobile'
 import Subtotal from './cart-components/Subtotal'
 import RemoveProduct from './cart-components/RemoveProduct'
 import config from '../config.json'
+import $ from 'jquery'
 
 
 const Cart = () => {
@@ -20,9 +20,9 @@ const Cart = () => {
             {
                 cart.products.map((product, idx) => {
                     return (
-                        <div className="ui four column grid computer only" key={product.id} style={customStyle}>
+                        <div className={`ui four column grid computer only ${cart.lastRemoved == product.id ? 'animate__animated animate__zoomOut' : ''}`} key={product.id} style={customStyle}>
                             <div className="column">
-                                <RemoveProduct product={product} />
+                                <RemoveProduct product={product}/>
                                 <img src={product.image} alt={product.title} style={{height:"128px"}}/>
                             </div>
                             <div  className="column">

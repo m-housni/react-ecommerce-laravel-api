@@ -1,7 +1,7 @@
 import { ActionTypes } from '../constants/action-types'
 
 const initialState = {
-    products: [], total: 0
+    products: [], total: 0, lastRemoved: null
 }
 
 
@@ -46,7 +46,13 @@ export const cartReducer = (state = initialState, action) => {
             return {
                 ...state, 
                 products: [...productsCopyLeft, ...productsCopyRight],
-                total: state.total - action.payload.price*action.payload.qty
+                total: state.total - action.payload.price*action.payload.qty,
+                lastRemoved: null
+            }
+        case ActionTypes.LAST_REMOVED:
+            return {
+                ...state,
+                lastRemoved: productExists.id
             }
         default:
             return state

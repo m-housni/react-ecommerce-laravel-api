@@ -41,3 +41,10 @@ export const removeFromCart = (product) => {
         payload: product,
     }
 }
+
+export const updateLastRemoved = (product) => {
+    return {
+        type: ActionTypes.LAST_REMOVED,
+        payload: product,
+    }
+}
