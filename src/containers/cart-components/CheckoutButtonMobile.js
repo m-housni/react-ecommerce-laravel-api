@@ -1,10 +1,9 @@
 import React from 'react'
 import config from '../../config.json'
 
-function CheckoutButton({total}) {
+function CheckoutButtonMobile({total}) {
   return (
-    <div className="ui two column grid computer only" style={{border:`5px solid ${config.theme.PRIMARY_COLOR}`, marginBottom:"5px", borderRadius:"5px"}}> 
-      <div className="column"><h1>TOTAL</h1></div>
+    <div className="ui one column grid mobile tablet only" style={{border:`5px solid ${config.theme.PRIMARY_COLOR}`, marginBottom:"5px", borderRadius:"5px"}}> 
       <div className="column">
         <div className="ui left labeled button" tabIndex="0">
           <a className="ui basic right pointing label">
@@ -20,4 +19,4 @@ function CheckoutButton({total}) {
   )
 }
 
-export default CheckoutButton
+export default CheckoutButtonMobile

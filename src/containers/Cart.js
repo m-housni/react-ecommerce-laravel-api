@@ -2,13 +2,16 @@ import React, {useState} from 'react'
 import { useSelector, useDispatch } from "react-redux"
 import SelectQuantity from './cart-components/SelectQuantity'
 import CheckoutButton from './cart-components/CheckoutButton'
+import CheckoutButtonMobile from './cart-components/CheckoutButtonMobile'
 import Subtotal from './cart-components/Subtotal'
+import RemoveProduct from './cart-components/RemoveProduct'
 import config from '../config.json'
 
 
 const Cart = () => {
 
     const cart = useSelector(state => state.cart)
+    const customStyle = {border:`5px solid ${config.theme.PRIMARY_COLOR}`, marginBottom:"5px", borderRadius:"5px"}
 
     return (
         <div className="ui container">
@@ -17,12 +20,10 @@ const Cart = () => {
             {
                 cart.products.map((product, idx) => {
                     return (
-                        <div className="ui four column grid computer only" key={product.id} style={{border:`1px solid ${config.theme.PRIMARY_COLOR}`, marginBottom:"5px"}}>
+                        <div className="ui four column grid computer only" key={product.id} style={customStyle}>
                             <div className="column">
-                                <div className="ui segment">
-                                    <span className="ui left corner label"><i className="trash icon"></i></span>
-                                    <img src={product.image} alt={product.title} style={{height:"128px"}}/>
-                                </div>
+                                <RemoveProduct product={product} />
+                                <img src={product.image} alt={product.title} style={{height:"128px"}}/>
                             </div>
                             <div  className="column">
                                 {product.title}
@@ -39,12 +40,16 @@ const Cart = () => {
                     )
                 })
             }
+            <CheckoutButton total={cart.total} />
+
             {/* MOBILE TABLET */}
+            <CheckoutButtonMobile total={cart.total} />
            {
                 cart.products.map(product => {
                     return (
-                        <div className="ui three column grid mobile tablet only" key={product.id}>
+                        <div className="ui three column grid mobile tablet only" key={product.id} style={customStyle}>
                             <div className="column ">
+                                <RemoveProduct product={product} />
                                 <img src={product.image} alt={product.title} style={{width:"32px"}} />
                                 <br />
                                 {product.title}
@@ -61,7 +66,7 @@ const Cart = () => {
                     )
                 })
             }
-            <CheckoutButton total={cart.total} />
+            <CheckoutButtonMobile total={cart.total} />
         </div>
     )
 }
