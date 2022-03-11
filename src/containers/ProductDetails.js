@@ -21,14 +21,14 @@ const ProductDetails = () => {
 
     // fech product from FakeStoreAPI
     const fetchProduct = async () => {
-        const response = await axios.get(`https://fakestoreapi.com/products/${pid}`).catch(err => console.log(err))
+        const response = await axios.get(`http://127.0.0.1:8000/api/products/${pid}`).catch(err => console.log(err))
         if(response){
             dispatch(selectedProduct(response.data))
             fetchSimilarProducts(response.data.category)
         }
     }
     const fetchSimilarProducts = async (category) => {
-        const response = await axios.get(`https://fakestoreapi.com/products/category/${category}`).catch(err => console.log(err))
+        const response = await axios.get(`http://127.0.0.1:8000/api/products/category/${category}`).catch(err => console.log(err))
         if(response) {
             setSimilarProducts(response.data)
         }

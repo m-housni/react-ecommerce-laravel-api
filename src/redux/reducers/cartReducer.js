@@ -19,14 +19,14 @@ export const cartReducer = (state = initialState, action) => {
                 return {
                     ...state, 
                     products: [...state.products, {...action.payload, qty: action.payload.qty ?? 0 + 1}],
-                    total: state.total + action.payload.price
+                    total: state.total - -1*action.payload.price
                 }
             } else {
                 productExists.qty += 1
                 return {
                     ...state, 
                     products: [...productsCopyLeft, {...productExists}, ...productsCopyRight],
-                    total: state.total + action.payload.price
+                    total: state.total - -1*action.payload.price
                 }
             }
             return state

@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 const Categories = () => {
@@ -7,7 +8,7 @@ const Categories = () => {
 
     // fech products from FakeStoreAPI
     const fetchCategories = async () => {
-        const response = await axios.get('https://fakestoreapi.com/products/categories').catch(err => console.log(err))
+        const response = await axios.get('http://127.0.0.1:8000/api/product/categories').catch(err => console.log(err))
         if(response) {
             setCategories(response.data)
         }
@@ -15,16 +16,16 @@ const Categories = () => {
 
     useEffect(() => {
         fetchCategories()
-    },[categories])
+    },[])
 
 
     return (
         <>
             {categories.map((category, idx) => {
                 return ( 
-                    <a className='item' href="#" key={idx}>
+                    <span className='item' href="#" key={idx}>
                         {category}
-                    </a> 
+                    </span> 
                 )
             })}
         </>

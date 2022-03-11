@@ -18,7 +18,7 @@ const ProductListing = () => {
         const tst = toast.loading('Loading...',{
             position: 'bottom-left',
         })
-        const response = await axios.get('https://fakestoreapi.com/products')
+        const response = await axios.get('http://127.0.0.1:8000/api/products')
                                     .catch(err => {
                                         toast.error("Something went wrong, please try again later")
                                         console.log(err)

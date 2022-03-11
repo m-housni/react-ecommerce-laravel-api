@@ -28,7 +28,7 @@ function App() {
           <Route path="/wishlist" element={<Wishlist />} />
         </Routes>
         <Toaster 
-            position="top-left"
+            position="top-right"
             reverseOrder={false}
         />
     </div>

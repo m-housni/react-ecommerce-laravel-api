@@ -47,7 +47,7 @@ const Cart = () => {
            {
                 cart.products.map(product => {
                     return (
-                        <div className="ui three column grid mobile tablet only" key={product.id} style={customStyle}>
+                        <div className={`ui three column grid mobile tablet only ${cart.lastRemoved == product.id ? 'animate__animated animate__zoomOut' : ''}`} key={product.id} style={customStyle}>
                             <div className="column ">
                                 <RemoveProduct product={product} />
                                 <img src={product.image} alt={product.title} style={{width:"32px"}} />
