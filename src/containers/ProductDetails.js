@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from "react-redux"
 import { selectedProduct, removeSelectedProduct } from '../redux/actions/productActions'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
-import SimilarProduct from './SimilarProduct'
 import $ from 'jquery'
 import config from '../config.json'
 import Product from './Product'
@@ -28,7 +27,7 @@ const ProductDetails = () => {
         }
     }
     const fetchSimilarProducts = async (category) => {
-        const response = await axios.get(`http://127.0.0.1:8000/api/products/category/${category}`).catch(err => console.log(err))
+        const response = await axios.get(` /${category}`).catch(err => console.log(err))
         if(response) {
             setSimilarProducts(response.data)
         }
