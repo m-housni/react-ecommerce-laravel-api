@@ -27,7 +27,7 @@ const ProductDetails = () => {
         }
     }
     const fetchSimilarProducts = async (category) => {
-        const response = await axios.get(` /${category}`).catch(err => console.log(err))
+        const response = await axios.get(`http://127.0.0.1:8000/api/products/category/${category}`).catch(err => console.log(err))
         if(response) {
             setSimilarProducts(response.data)
         }

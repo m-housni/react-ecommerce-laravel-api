@@ -5,7 +5,7 @@ import CheckoutButtonMobile from './cart-components/CheckoutButtonMobile'
 import Subtotal from './cart-components/Subtotal'
 import RemoveProduct from './cart-components/RemoveProduct'
 import config from '../config.json'
-import $ from 'jquery'
+import { Link } from 'react-router-dom'
 
 
 const Cart = () => {
@@ -23,7 +23,9 @@ const Cart = () => {
                         <div className={`ui four column grid computer only ${cart.lastRemoved == product.id ? 'animate__animated animate__zoomOut' : ''}`} key={product.id} style={customStyle}>
                             <div className="column">
                                 <RemoveProduct product={product}/>
-                                <img src={product.image} alt={product.title} style={{height:"128px"}}/>
+                                <Link to={`/product/${product.id}/${product.title.replace(/\s/g, "_").replace(/\//g, '')}`}>
+                                    <img src={product.image} alt={product.title} style={{height:"128px"}}/>
+                                </Link>
                             </div>
                             <div  className="column">
                                 {product.title}
@@ -50,7 +52,9 @@ const Cart = () => {
                         <div className={`ui three column grid mobile tablet only ${cart.lastRemoved == product.id ? 'animate__animated animate__zoomOut' : ''}`} key={product.id} style={customStyle}>
                             <div className="column ">
                                 <RemoveProduct product={product} />
-                                <img src={product.image} alt={product.title} style={{width:"32px"}} />
+                                <Link to={`/product/${product.id}/${product.title.replace(/\s/g, "_").replace(/\//g, '')}`}>
+                                    <img src={product.image} alt={product.title} style={{width:"64px"}} />
+                                </Link>
                                 <br />
                                 {product.title}
                                 <br />
