@@ -41,22 +41,23 @@ const ProductListing = () => {
 
     return (
         <div className="row">
-            {Object.keys(products).length === 0 ?
-            <div className='center-on-screen'>
-                <div className="ui massive active centered inline loader"></div>
-            </div>
-             :
-            <div className="ui doubling four column grid"> 
-                {products.map(product => {
-                    return ( 
-                        <Product 
-                            product={product} 
-                            key={product.id}  
-                        />   
-                    )
-                })}
-            </div>
-        }
+            {
+                Object.keys(products).length === 0 ?
+                <div className='center-on-screen'>
+                    <div className="ui massive active centered inline loader"></div>
+                </div>
+                :
+                <div className="ui doubling four column grid"> 
+                    {products.map(product => {
+                        return ( 
+                            <Product 
+                                product={product} 
+                                key={product.id}  
+                            />   
+                        )
+                    })}
+                </div>
+            }
         </div>
     )
 }

@@ -23,9 +23,11 @@ const Categories = () => {
         <>
             {categories.map((category, idx) => {
                 return ( 
-                    <span className='item' href="#" key={idx}>
+                    <Link to={`/products/category/${category}`} key={idx}>
+                    <span className='item' style={{color:"#000"}}>
                         {category}
                     </span> 
+                    </Link>
                 )
             })}
         </>

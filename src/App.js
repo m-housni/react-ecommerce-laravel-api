@@ -7,7 +7,7 @@ import ProductDetails from './containers/ProductDetails'
 import About from './containers/About'
 import Cart from './containers/Cart'
 import Wishlist from './containers/Wishlist'
-import SideIcons from "./containers/SideIcons"
+import ProductsByCategory from './containers/ProductsByCategory'
 import './App.css'
 import toast, { Toaster } from 'react-hot-toast';
 import $ from 'jquery'
@@ -26,6 +26,7 @@ function App() {
           <Route path="/product/:productId/:productName" element={<ProductDetails />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/products/category/:category" element={<ProductsByCategory />} />
         </Routes>
         <Toaster 
             position="top-right"
