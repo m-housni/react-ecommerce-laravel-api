@@ -7,8 +7,10 @@ import About from './containers/About'
 import Cart from './containers/Cart'
 import Wishlist from './containers/Wishlist'
 import ProductsByCategory from './containers/ProductsByCategory'
+import LoginSignup from "./containers/LoginSignup"
 import './App.css'
 import './fontawesomepro/css/all.css'
+import './media.css'
 import toast, { Toaster } from 'react-hot-toast'
 import OfflineAlert from "./containers/OfflineAlert"
 
@@ -21,6 +23,7 @@ function App() {
         <HeaderFixed />
         <div className="mt"></div>
         <OfflineAlert />
+        <LoginSignup />
         <Routes>
           <Route path="/" element={<ProductListing />} />
           <Route path="/about" element={<About />} />

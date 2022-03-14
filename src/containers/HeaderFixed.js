@@ -18,13 +18,13 @@ const HeaderFixed = () => {
                         <Categories />
                     </div>
                 </div>
-                <Link to="/cart" className="item">
-                    <i className="cart icon"></i>
-                    <sup>{count}</sup>
-                </Link>
-                <Link to="/wishlist" className="item">
+                <Link to="/wishlist" className="float item">
                     <i className="heart icon"></i>
                     <sup>11</sup>
+                </Link>
+                <Link to="/cart" className="right item">
+                    <i className="cart icon"></i>
+                    <sup>{count}</sup>
                 </Link>
             </div>
         </div>
