@@ -3,19 +3,19 @@ import config from '../../config.json'
 
 function CheckoutButton({total, styles}) {
   return (
-    <div className="ui two column grid computer only" style={styles}> 
-      <div className="column"><h1>TOTAL</h1></div>
-      <div className="column">
-        <div className="ui left labeled button" tabIndex="0">
-          <a className="ui basic right pointing label">
-              <span style={{fontSize:20}}>${ parseFloat(total).toFixed(2) }</span>
-          </a>
-          <div className={`ui button massive ${config.theme.PRIMARY_COLOR}`}>
+
+        <div>
+          <h1>TOTAL</h1>
+          <h2 style={{marginBottom:"20px"}}>${ parseFloat(total).toFixed(2) }</h2>
+          <button class="ui right labeled icon button red">
+              <i class="right arrow icon"></i>
               Checkout
-          </div>
+          </button>
+          <button class="ui right labeled icon button">
+              <i class="right arrow icon"></i>
+              Continue Shopping
+          </button>
         </div>  
-      </div>
-    </div>
     
   )
 }

@@ -27,7 +27,6 @@ const Product = ({product}) => {
                     <div style={{fontSize:".7rem"}}>{product.title.substring(0,24)} ...</div>
                     ${product.price}
                 </div>
-                
             </div>
         </div>
         </Link>

@@ -22,6 +22,10 @@
   margin-bottom:20px;
 }
 
+.w66 {
+  width:66% !important;
+}
+
 /* [1] The container */
 .img-hover-zoom {
   overflow: hidden; /* [1.2] Hide the overflowing of child elements */

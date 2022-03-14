@@ -60,6 +60,14 @@ const ProductDetails = () => {
                         <p>{product.description}</p>
                         <p><span className={`ui ${config.theme.PRIMARY_COLOR} inverted large teal tag label ${config.theme.PRIMARY_COLOR} inverted`}>${product.price}</span></p>
                         <p>{product.category}</p>
+                        <button class="ui right labeled icon button red">
+                            <i class="right arrow icon"></i>
+                            Buy Now
+                        </button>
+                        <button class="ui right labeled icon button">
+                            <i class="cart icon"></i>
+                            Add to cart
+                        </button>
                     </div>
                     <h1>Similar Products</h1>
                     <div className="ui doubling four column grid container">

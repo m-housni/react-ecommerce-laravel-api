@@ -21,7 +21,7 @@ export default function SelectQuantity({product}) {
 
     return (
         <>
-            <div className="ui buttons fluid">
+            <div className="ui buttons">
                 <button className="ui button" onClick={() => handleDecrementQty(product)}>-</button>
                     <div className="or" data-text={product.qty}></div>
                 <button className={`ui button ${config.theme.PRIMARY_COLOR}`} onClick={() => handleAddToCart(product)}>+</button>

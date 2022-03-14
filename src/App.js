@@ -23,7 +23,7 @@ function App() {
         <HeaderFixed />
         <div className="mt"></div>
         <OfflineAlert />
-        <LoginSignup />
+        {/* <LoginSignup /> */}
         <Routes>
           <Route path="/" element={<ProductListing />} />
           <Route path="/about" element={<About />} />
