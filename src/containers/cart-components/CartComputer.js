@@ -8,16 +8,16 @@ import { Link } from 'react-router-dom'
 
 const CartComputer = ({cart}) => {
 
-    const customStyle = {border:`5px solid ${config.theme.PRIMARY_COLOR}`, marginBottom:"5px", borderRadius:"5px"}
+    const styles = {border:`5px solid ${config.theme.PRIMARY_COLOR}`, marginBottom:"5px", borderRadius:"5px"}
 
     return (
         <div className="ui container">
-            <CheckoutButton total={cart.total} />
+            <CheckoutButton total={cart.total} styles={styles} />
             {/* COMPUTER */}
             {
                 cart.products.map((product, idx) => {
                     return (
-                        <div className={`ui four column grid computer only ${cart.lastRemoved == product.id ? 'animate__animated animate__zoomOut' : ''}`} key={product.id} style={customStyle}>
+                        <div className={`ui four column grid computer only ${cart.lastRemoved == product.id ? 'animate__animated animate__zoomOut' : ''}`} key={product.id} style={styles}>
                             <div className="column">
                                 <RemoveProduct product={product}/>
                                 <Link to={`/product/${product.id}/${product.title.replace(/\s/g, "_").replace(/\//g, '')}`}>
@@ -39,7 +39,7 @@ const CartComputer = ({cart}) => {
                     )
                 })
             }
-            <CheckoutButton total={cart.total} />
+            <CheckoutButton total={cart.total} styles={styles} />
         </div>
     )
 }

@@ -1,5 +1,4 @@
 import React from "react"
-import Header from './containers/Header'
 import HeaderFixed from "./containers/HeaderFixed"
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import ProductListing from './containers/ProductListing'
@@ -9,17 +8,19 @@ import Cart from './containers/Cart'
 import Wishlist from './containers/Wishlist'
 import ProductsByCategory from './containers/ProductsByCategory'
 import './App.css'
-import toast, { Toaster } from 'react-hot-toast';
-import $ from 'jquery'
+import './fontawesomepro/css/all.css'
+import toast, { Toaster } from 'react-hot-toast'
+import OfflineAlert from "./containers/OfflineAlert"
+
 
 
 function App() {
-
   return (
     <>
     <div className="ui container">
         <HeaderFixed />
-        <div className="mt" />
+        <div className="mt"></div>
+        <OfflineAlert />
         <Routes>
           <Route path="/" element={<ProductListing />} />
           <Route path="/about" element={<About />} />

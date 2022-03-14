@@ -1,9 +1,9 @@
 import React from 'react'
 import config from '../../config.json'
 
-function CheckoutButtonMobile({total}) {
+function CheckoutButtonMobile({total,styles}) {
   return (
-    <div className="ui one column grid mobile tablet only" style={{border:`5px solid ${config.theme.PRIMARY_COLOR}`, marginBottom:"5px", borderRadius:"5px"}}> 
+    <div className="ui one column grid mobile tablet only" style={styles}> 
       <div className="column">
         <div className="ui left labeled button" tabIndex="0">
           <a className="ui basic right pointing label">

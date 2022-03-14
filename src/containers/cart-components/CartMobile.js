@@ -8,16 +8,16 @@ import { Link } from 'react-router-dom'
 
 const CartMobile = ({cart}) => {
 
-    const customStyle = {border:`5px solid ${config.theme.PRIMARY_COLOR}`, marginBottom:"5px", borderRadius:"5px"}
+    const styles = {border:`5px solid ${config.theme.PRIMARY_COLOR}`, marginBottom:"5px", borderRadius:"5px"}
 
     return (
         <div className="ui container">
             {/* MOBILE TABLET */}
-            <CheckoutButtonMobile total={cart.total} />
+            <CheckoutButtonMobile total={cart.total} styles={styles} />
            {
                 cart.products.map(product => {
                     return (
-                        <div className={`ui three column grid mobile tablet only ${cart.lastRemoved == product.id ? 'animate__animated animate__zoomOut' : ''}`} key={product.id} style={customStyle}>
+                        <div className={`ui three column grid mobile tablet only ${cart.lastRemoved == product.id ? 'animate__animated animate__zoomOut' : ''}`} key={product.id} style={styles}>
                             <div className="column ">
                                 <RemoveProduct product={product} />
                                 <Link to={`/product/${product.id}/${product.title.replace(/\s/g, "_").replace(/\//g, '')}`}>
@@ -38,7 +38,7 @@ const CartMobile = ({cart}) => {
                     )
                 })
             }
-            <CheckoutButtonMobile total={cart.total} />
+            <CheckoutButtonMobile total={cart.total} styles={styles} />
         </div>
     )
 }
