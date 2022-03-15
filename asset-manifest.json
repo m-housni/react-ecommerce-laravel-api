@@ -1,13 +1,39 @@
 {
   "files": {
-    "main.css": "/react-redux-fake-shop/static/css/main.c96cf5fa.css",
-    "main.js": "/react-redux-fake-shop/static/js/main.65db9137.js",
+    "main.css": "/react-redux-fake-shop/static/css/main.4ba76428.css",
+    "main.js": "/react-redux-fake-shop/static/js/main.231e34ac.js",
+    "static/media/fa-duotone-900.svg": "/react-redux-fake-shop/static/media/fa-duotone-900.a11a48961a601d2926c5.svg",
+    "static/media/fa-light-300.svg": "/react-redux-fake-shop/static/media/fa-light-300.329ac15a79cc35c363f6.svg",
+    "static/media/fa-regular-400.svg": "/react-redux-fake-shop/static/media/fa-regular-400.18658d17d9e38ca06895.svg",
+    "static/media/fa-solid-900.svg": "/react-redux-fake-shop/static/media/fa-solid-900.c1df6dae72efa4b135b7.svg",
+    "static/media/fa-brands-400.svg": "/react-redux-fake-shop/static/media/fa-brands-400.9ed8ad4651c7586b577e.svg",
+    "static/media/fa-duotone-900.eot": "/react-redux-fake-shop/static/media/fa-duotone-900.e6df3ccd2c18fa4aa999.eot",
+    "static/media/fa-duotone-900.ttf": "/react-redux-fake-shop/static/media/fa-duotone-900.e4227bedad83d59656b4.ttf",
+    "static/media/fa-light-300.eot": "/react-redux-fake-shop/static/media/fa-light-300.1bdff46d9f25dde635e0.eot",
+    "static/media/fa-light-300.ttf": "/react-redux-fake-shop/static/media/fa-light-300.8fe0bd1d3e62c597a0c4.ttf",
+    "static/media/fa-regular-400.eot": "/react-redux-fake-shop/static/media/fa-regular-400.46bbd47ac2b9b0cdfae2.eot",
+    "static/media/fa-regular-400.ttf": "/react-redux-fake-shop/static/media/fa-regular-400.d02baad177fca99e2738.ttf",
+    "static/media/fa-solid-900.eot": "/react-redux-fake-shop/static/media/fa-solid-900.06fbe2ee912e35f2c53c.eot",
+    "static/media/fa-solid-900.ttf": "/react-redux-fake-shop/static/media/fa-solid-900.b645fda76c34402c3588.ttf",
+    "static/media/fa-duotone-900.woff": "/react-redux-fake-shop/static/media/fa-duotone-900.8007c3d55ab05f26330d.woff",
+    "static/media/fa-light-300.woff": "/react-redux-fake-shop/static/media/fa-light-300.5d111e0fbbaced46646e.woff",
+    "static/media/fa-regular-400.woff": "/react-redux-fake-shop/static/media/fa-regular-400.5fd5b25f40f21aa40fd5.woff",
+    "static/media/fa-light-300.woff2": "/react-redux-fake-shop/static/media/fa-light-300.fc1caad4139f764993b3.woff2",
+    "static/media/fa-solid-900.woff": "/react-redux-fake-shop/static/media/fa-solid-900.57fd8d0e738650c88266.woff",
+    "static/media/fa-duotone-900.woff2": "/react-redux-fake-shop/static/media/fa-duotone-900.b8e58f2bb0ee4c37cd08.woff2",
+    "static/media/fa-regular-400.woff2": "/react-redux-fake-shop/static/media/fa-regular-400.ad461e5fa7137fee6f95.woff2",
+    "static/media/fa-solid-900.woff2": "/react-redux-fake-shop/static/media/fa-solid-900.649614c34cb1aaa227bd.woff2",
+    "static/media/fa-brands-400.eot": "/react-redux-fake-shop/static/media/fa-brands-400.05718c797d47f884efcb.eot",
+    "static/media/fa-brands-400.ttf": "/react-redux-fake-shop/static/media/fa-brands-400.3059d606e43fea58d959.ttf",
+    "static/media/fa-brands-400.woff": "/react-redux-fake-shop/static/media/fa-brands-400.13a061ea7f526a9e20fd.woff",
+    "static/media/fa-brands-400.woff2": "/react-redux-fake-shop/static/media/fa-brands-400.29ff4724bd1b1e774a01.woff2",
+    "static/media/no-wifi.png": "/react-redux-fake-shop/static/media/no-wifi.819d1066d3057a211ff9.png",
     "index.html": "/react-redux-fake-shop/index.html",
-    "main.c96cf5fa.css.map": "/react-redux-fake-shop/static/css/main.c96cf5fa.css.map",
-    "main.65db9137.js.map": "/react-redux-fake-shop/static/js/main.65db9137.js.map"
+    "main.4ba76428.css.map": "/react-redux-fake-shop/static/css/main.4ba76428.css.map",
+    "main.231e34ac.js.map": "/react-redux-fake-shop/static/js/main.231e34ac.js.map"
   },
   "entrypoints": [
-    "static/css/main.c96cf5fa.css",
-    "static/js/main.65db9137.js"
+    "static/css/main.4ba76428.css",
+    "static/js/main.231e34ac.js"
   ]
 }
