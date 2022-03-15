@@ -12,12 +12,12 @@ const CartComputer = ({cart}) => {
 
     return (
 
-            <div className="ui horizontal segments">
+            <div className="ui horizontal segments grid">
                 <div className="ui segment w66">
                 {
                     cart.products.map((product, idx) => {
                         return (
-                            <div className={`ui three column grid computer only ${cart.lastRemoved == product.id ? 'animate__animated animate__zoomOut' : ''}`} key={product.id} style={styles}>
+                            <div className={`ui three column grid ${cart.lastRemoved == product.id ? 'animate__animated animate__fadeOut' : ''}`} key={product.id} style={styles}>
                                 <div className="column">
                                     <RemoveProduct product={product}/>
                                     <Link to={`/product/${product.id}/${product.title.replace(/\s/g, "_").replace(/\//g, '')}`}>
@@ -43,9 +43,6 @@ const CartComputer = ({cart}) => {
                     <CheckoutButton total={cart.total} styles={styles} />
                 </div>
             </div>
-            
-            
-
     )
 }
 

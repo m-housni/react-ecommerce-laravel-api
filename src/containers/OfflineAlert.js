@@ -8,7 +8,7 @@ function OfflineAlert() {
     const customStyles = {}
 
     return (
-    <Offline onChange={(online) => online ? toast.success('Back online!') : toast.error('You are offline :(',{position:"top-left"})}>
+    <Offline onChange={(online) => online ? toast.success('Back online!') : toast.error('You are offline :(')}>
     <div className="ui container mb" style={customStyles}>
         <h1><i className="fas fa-wifi-slash"></i> You are Offline</h1>
         <p>Please check your internet connexion</p>

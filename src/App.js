@@ -33,7 +33,7 @@ function App() {
           <Route path="/products/category/:category" element={<ProductsByCategory />} />
         </Routes>
         <Toaster 
-            position="top-right"
+            position="bottom-center"
             reverseOrder={false}
         />
     </div>

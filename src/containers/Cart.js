@@ -17,7 +17,7 @@ const Cart = () => {
             </div> :
             <div className="ui container">
                 <CartComputer cart={cart} />    
-                <CartMobile cart={cart} />
+                {/* <CartMobile cart={cart} /> */}
             </div>
         }
         </>
