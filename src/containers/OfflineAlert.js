@@ -13,7 +13,7 @@ function OfflineAlert() {
         <h1><i className="fas fa-wifi-slash"></i> You are Offline</h1>
         <p>Please check your internet connexion</p>
         <div style={{textAlign:"center"}}>
-            {/* <i class="fas fa-wifi-slash fa-4x"></i> */}
+            {/* <i className="fas fa-wifi-slash fa-4x"></i> */}
             <img src={nowifi} height="100" />
         </div>
     </div> 

@@ -7,12 +7,12 @@ function CheckoutButton({total, styles}) {
         <div>
           <h1>TOTAL</h1>
           <h2 style={{marginBottom:"20px"}}>${ parseFloat(total).toFixed(2) }</h2>
-          <button class="ui right labeled icon button red">
-              <i class="right arrow icon"></i>
+          <button className="ui right labeled icon button red">
+              <i className="right arrow icon"></i>
               Checkout
           </button>
-          <button class="ui right labeled icon button">
-              <i class="right arrow icon"></i>
+          <button className="ui right labeled icon button">
+              <i className="right arrow icon"></i>
               Continue Shopping
           </button>
         </div>  

@@ -6,6 +6,7 @@ import axios from 'axios'
 import $ from 'jquery'
 import config from '../config.json'
 import Product from './Product'
+import { Link } from 'react-router-dom'
 
 
 
@@ -59,15 +60,15 @@ const ProductDetails = () => {
                         <h1>{product.title}</h1>
                         <p>{product.description}</p>
                         <p><span className={`ui ${config.theme.PRIMARY_COLOR} inverted large teal tag label ${config.theme.PRIMARY_COLOR} inverted`}>${product.price}</span></p>
-                        <p>{product.category}</p>
-                        <button class="ui right labeled icon button red">
-                            <i class="right arrow icon"></i>
+                        <button className="ui right labeled icon button red">
+                            <i className="right arrow icon"></i>
                             Buy Now
                         </button>
-                        <button class="ui right labeled icon button">
-                            <i class="cart icon"></i>
+                        <button className="ui right labeled icon button">
+                            <i className="cart icon"></i>
                             Add to cart
                         </button>
+                        <p style={{marginTop:"20px"}}><Link to={`/products/category/${product.category}`}>{product.category}</Link></p>
                     </div>
                     <h1>Similar Products</h1>
                     <div className="ui doubling four column grid container">
