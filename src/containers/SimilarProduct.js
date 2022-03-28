@@ -15,7 +15,6 @@ const Product = ({product}) => {
 
     return (
         <Link to={`/product/${product.id}/${product.title.replace(/\s/g, "_").replace(/\//g, '')}`} className="column">
-        
             <div className="ui segment">
                 <span className="ui left corner label" onClick={() => handleAddToCart(product)}><i className="cart icon"></i></span>
                 <span className="ui right corner label"><i className="heart icon"></i></span>

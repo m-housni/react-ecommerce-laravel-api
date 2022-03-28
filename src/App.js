@@ -24,9 +24,9 @@ function App() {
         <HeaderFixed />
         <div className="mt"></div>
         <OfflineAlert />
-        <LoginSignup />
         <Routes>
           <Route path="/" element={<ProductListing />} />
+          <Route path="/login" element={<LoginSignup />} />
           <Route path="/about" element={<About />} />
           <Route path="/product/:productId/:productName" element={<ProductDetails />} />
           <Route path="/cart" element={<Cart />} />
