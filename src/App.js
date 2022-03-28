@@ -14,6 +14,7 @@ import './fontawesomepro/css/all.css'
 import './media.css'
 import toast, { Toaster } from 'react-hot-toast'
 import OfflineAlert from "./containers/OfflineAlert"
+import Search from './containers/Search'
 
 
 
@@ -24,6 +25,7 @@ function App() {
         <HeaderFixed />
         <div className="mt"></div>
         <OfflineAlert />
+        <Search />
         <Routes>
           <Route path="/" element={<ProductListing />} />
           <Route path="/login" element={<LoginSignup />} />
