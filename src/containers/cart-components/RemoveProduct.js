@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch } from "react-redux"
 import { removeFromCart, updateLastRemoved } from "../../redux/actions/productActions"
 import toast from 'react-hot-toast'
+import $ from 'jquery'
 
 export default function RemoveFromCart({product}) {
 

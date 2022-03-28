@@ -8,6 +8,7 @@ import Cart from './containers/Cart'
 import Wishlist from './containers/Wishlist'
 import ProductsByCategory from './containers/ProductsByCategory'
 import LoginSignup from "./containers/LoginSignup"
+import Modal from "./containers/Modal"
 import './App.css'
 import './fontawesomepro/css/all.css'
 import './media.css'
@@ -36,6 +37,7 @@ function App() {
             position="bottom-center"
             reverseOrder={false}
         />
+        <Modal />
     </div>
     </>
   );

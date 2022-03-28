@@ -9,7 +9,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter basename="/" /* basename="/react-redux-fake-shop" */>
+    <BrowserRouter basename="/react-ecommerce-laravel-api" /* basename="/react-redux-fake-shop" */>
         <App />
     </BrowserRouter>
   </Provider>,
