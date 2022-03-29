@@ -1,33 +1,45 @@
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import config from '../config.json'
 import Categories from './Categories'
- import { useSelector, useDispatch } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
+import axios from 'axios'
+import { logout } from '../redux/actions/loginActions'
+import { useNavigate } from 'react-router-dom'
+import Loader from './Loader'
+import Navigation from './Navigation'
+import Navbar from './Navbar'
 
 const HeaderFixed = () => {
 
     const count = useSelector(state => state.cart.products.length)
+    const loginInfo = useSelector(state => state.login)
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const [loader, setLoader] = useState(false)
+
+    const handleLogout = () => {
+        const config = {
+            headers: { Authorization: `Bearer ${loginInfo.token}` }
+        }
+    
+        console.log(config)
+            setLoader(true)
+            axios.post('http://127.0.0.1:8000/api/logout',{},config).then(res => {
+                navigate('/')
+                setLoader(false)
+                dispatch(logout({}))
+            }).catch(err => {
+                console.log(err)
+            })
+    }
 
     return (
-        <div className={`ui fixed ${config.theme.PRIMARY_COLOR} inverted menu`}>
-            <div className="ui container">
-                <Link to="/" className="header item"><span className="logo-text">{config.APP_NAME}</span></Link>
-                <Link to="/" className="item">Shop</Link>
-                <div className="ui simple dropdown item">
-                    <i className="filter icon"></i>
-                    <div className="menu">
-                        <Categories />
-                    </div>
-                </div>
-                <Link to="/wishlist" className="float item">
-                    <i className="heart icon"></i>
-                    <sup>11</sup>
-                </Link>
-                <Link to="/cart" className="right item">
-                    <i className="cart icon"></i>
-                    <sup>{count}</sup>
-                </Link>
-            </div>
-        </div>
+        <>
+        { loader && <Loader />}
+        <Navbar config={config} count={count} />
+        <Navigation loginInfo={loginInfo} handleLogout={handleLogout} count={count} />
+        </>
     )
 }
 

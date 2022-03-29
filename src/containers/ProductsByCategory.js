@@ -6,6 +6,7 @@ import Product from './Product'
 import toast from 'react-hot-toast';
 import $ from 'jquery'
 import { useParams } from 'react-router-dom'
+import { Image } from 'semantic-ui-react'
 
 
 const ProductsByCategory = () => {
@@ -45,7 +46,13 @@ const ProductsByCategory = () => {
                 <div className="ui massive active centered inline loader"></div>
             </div> :
              <>
-             <h1>{category}</h1>
+             <Image
+                src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5uxRYKXTVqt4JjrwC8RmlKMRPNs2JgPAJjQ&usqp=CAU'
+                as='a'
+                fluid
+                href='http://example.com'
+                target='_blank'
+            />
             <div className="ui doubling four column grid"> 
                 {products.map(product => {
                     return ( 

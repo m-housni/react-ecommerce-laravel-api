@@ -5,6 +5,7 @@ import axios from 'axios'
 import Product from './Product'
 import toast from 'react-hot-toast';
 import $ from 'jquery'
+import Loader from './Loader'
 
 
 const ProductListing = () => {
@@ -43,9 +44,7 @@ const ProductListing = () => {
         <div className="row">
             {
                 Object.keys(products).length === 0 ?
-                <div className='center-on-screen'>
-                    <div className="ui massive active centered inline loader"></div>
-                </div>
+                <Loader />
                 :
                 <div className="ui doubling four column grid"> 
                     {products.map(product => {

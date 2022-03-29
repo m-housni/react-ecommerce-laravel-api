@@ -15,6 +15,7 @@ import './media.css'
 import toast, { Toaster } from 'react-hot-toast'
 import OfflineAlert from "./containers/OfflineAlert"
 import Search from './containers/Search'
+import AdminDashboard from "./containers/AdminDashboard"
 
 
 
@@ -29,6 +30,7 @@ function App() {
         <Routes>
           <Route path="/" element={<ProductListing />} />
           <Route path="/login" element={<LoginSignup />} />
+          <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/about" element={<About />} />
           <Route path="/product/:productId/:productName" element={<ProductDetails />} />
           <Route path="/cart" element={<Cart />} />
