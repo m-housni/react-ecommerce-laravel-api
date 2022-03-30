@@ -3,10 +3,12 @@ import { BrowserRouter as Router, Link } from "react-router-dom"
 import { useDispatch } from "react-redux"
 import { addToCart } from '../redux/actions/productActions'
 import toast from 'react-hot-toast'
+import { useSelector } from 'react-redux'
 
 const Product = ({product}) => {
 
     const dispatch = useDispatch()
+    const loginInfo = useSelector(state => state.login)
 
     const handleAddToCart = (product) => {
         toast.success("Added to cart")
@@ -14,7 +16,7 @@ const Product = ({product}) => {
     }
 
     return (
-        <Link to={`/product/${product.id}/${product.title.replace(/\s/g, "_").replace(/\//g, '')}`} className="column">
+        <Link to={`/products/${product.id}`} className="column">
         <div className="column">
             <div className="ui segment">
                 <span className="ui left corner label" onClick={() => handleAddToCart(product)}><i className="cart icon pointer"></i></span>
@@ -25,6 +27,7 @@ const Product = ({product}) => {
                 <div className="ui bottom attached label big text center aligned fluid-container">
                     <div style={{fontSize:".7rem"}}>{product.title.substring(0,24)} ...</div>
                     ${product.price}
+                    { loginInfo.status && <div style={{float:"right"}} onClick={() => alert()}><i className='icon edit'></i></div> }
                 </div>
             </div>
         </div>

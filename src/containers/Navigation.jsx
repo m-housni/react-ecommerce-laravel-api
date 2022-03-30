@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import ProductForm from './ProductForm'
 
 const Navigation = ({loginInfo, handleLogout, count}) => {
   return (
@@ -8,10 +9,9 @@ const Navigation = ({loginInfo, handleLogout, count}) => {
         { <Link to='/cart' className={`ui item ${window.location.pathname == '/cart' ? 'active' : ''}`}>Cart<sup>({count})</sup></Link>}
         { loginInfo.status && <Link to='/admin' className={`ui item ${window.location.pathname == '/admin' ? 'active' : ''}`}>Admin</Link>}
         <div className="right menu">
-            
-                { !loginInfo.status && <Link to='/login' className={`ui item ${window.location.pathname == '/login' ? 'active' : ''}`}>Login</Link> }
-                { loginInfo.status && <Link to='/admin' onClick={() => handleLogout()} className="ui item">Logout</Link> }
-            
+            { !loginInfo.status && <Link to='/login' className={`ui item ${window.location.pathname == '/login' ? 'active' : ''}`}>Login</Link> }
+            { loginInfo.status && <ProductForm /> }
+            { loginInfo.status && <Link to='/admin' onClick={() => handleLogout()} className="ui item">Logout</Link> }
         </div>
     </div>
   )

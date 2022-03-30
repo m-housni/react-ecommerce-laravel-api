@@ -15,7 +15,10 @@ const AdminDashboard = () => {
         <div className="ui horizontal segments grid">
             <div className="ui segment">
                 <h3>Welcome {loginInfo.user.name} !</h3>
-                <p>Happy Shopping </p>
+                <ul>
+                    <li>Add Product</li>
+                    <li>Edit Product</li>
+                </ul>
             </div>    
             <div className="ui segment">
                 <h3>Good news</h3>
